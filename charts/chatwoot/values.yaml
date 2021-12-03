@@ -98,6 +98,7 @@ tolerations: []
 
 affinity: {}
 
+# this can be omitted if env.enabled=false
 postgresql:
   enabled: true
   nameOverride: chatwoot-postgresql
@@ -111,6 +112,7 @@ postgresql:
   # existingSecret: secret-name
   # existingSecretKey: postgresql-password
 
+# this can be omitted if env.enabled=false
 redis:
   enabled: true
   nameOverride: chatwoot-redis
@@ -145,49 +147,65 @@ hooks:
 
 # ENVIRONMENT VARIABLES
 env:
-  ACTIVE_STORAGE_SERVICE: local
-  ANDROID_BUNDLE_ID: com.chatwoot.app
-  ANDROID_SHA256_CERT_FINGERPRINT: "AC:73:8E:DE:EB:56:EA:CC:10:87:02:A7:65:37:7B:38:D4:5D:D4:53:F8:3B:FB:D3:C6:28:64:1D:AA:08:1E:D8"
-  ASSET_CDN_HOST: ""
-  AWS_ACCESS_KEY_ID: ""
-  AWS_REGION: ""
-  AWS_SECRET_ACCESS_KEY: ""
-  ENABLE_ACCOUNT_SIGNUP: false
-  FB_APP_ID: ""
-  FB_APP_SECRET: ""
-  FB_VERIFY_TOKEN: ""
-  FORCE_SSL: false
-  FRONTEND_URL: "http://0.0.0.0:3000"
-  INSTALLATION_ENV: helm
-  IOS_APP_ID: 6C953F3RX2.com.chatwoot.app
-  LOG_LEVEL: info
-  LOG_SIZE: 500
-  MAILER_INBOUND_EMAIL_DOMAIN: ""
-  MAILER_SENDER_EMAIL: ""
-  MAILGUN_INGRESS_SIGNING_KEY: ""
-  MANDRILL_INGRESS_API_KEY: ""
-  RAILS_ENV: production
-  RAILS_INBOUND_EMAIL_PASSWORD: ""
-  RAILS_INBOUND_EMAIL_SERVICE: ""
-  RAILS_LOG_TO_STDOUT: true
-  RAILS_MAX_THREADS: 5
-  REDIS_SENTINEL_MASTER_NAME: ""
-  REDIS_SENTINELS: ""
-  REDIS_TLS: false
-  S3_BUCKET_NAME: ""
-  SECRET_KEY_BASE: replace_with_your_super_duper_secret_key_base
-  SENTRY_DSN: ""
-  SLACK_CLIENT_ID: ""
-  SLACK_CLIENT_SECRET: ""
-  SMTP_ADDRESS: ""
-  SMTP_AUTHENTICATION: plain
-  SMTP_ENABLE_STARTTLS_AUTO: true
-  SMTP_OPENSSL_VERIFY_MODE: none
-  SMTP_PASSWORD: ""
-  SMTP_PORT: 587
-  SMTP_USERNAME: ""
-  TWITTER_APP_ID: ""
-  TWITTER_CONSUMER_KEY: ""
-  TWITTER_CONSUMER_SECRET: ""
-  TWITTER_ENVIRONMENT: ""
-  USE_INBOX_AVATAR_FOR_BOT: true
+  # if you set enabled=false then you are required to supply the secret name in wich you have these environment variables
+  enabled: true
+  # uncomment this if you have env.enabled=false
+  # the secret must be created prior deploying this chart
+  # secret:
+  #   name: "chatwoot-env"
+  data:
+    # POSTGRES_HOST: ""
+    # POSTGRES_PORT: 5432
+    # POSTGRES_USERNAME: ""
+    # POSTGRES_PASSWORD: ""
+    # POSTGRES_DATABASE: ""
+    # REDIS_HOST: ""
+    # REDIS_PORT: 6379
+    # REDIS_PASSWORD: ""
+    # REDIS_URL: ""
+    ACTIVE_STORAGE_SERVICE: local
+    ANDROID_BUNDLE_ID: com.chatwoot.app
+    ANDROID_SHA256_CERT_FINGERPRINT: "AC:73:8E:DE:EB:56:EA:CC:10:87:02:A7:65:37:7B:38:D4:5D:D4:53:F8:3B:FB:D3:C6:28:64:1D:AA:08:1E:D8"
+    ASSET_CDN_HOST: ""
+    AWS_ACCESS_KEY_ID: ""
+    AWS_REGION: ""
+    AWS_SECRET_ACCESS_KEY: ""
+    ENABLE_ACCOUNT_SIGNUP: false
+    FB_APP_ID: ""
+    FB_APP_SECRET: ""
+    FB_VERIFY_TOKEN: ""
+    FORCE_SSL: false
+    FRONTEND_URL: "http://0.0.0.0:3000"
+    INSTALLATION_ENV: helm
+    IOS_APP_ID: 6C953F3RX2.com.chatwoot.app
+    LOG_LEVEL: info
+    LOG_SIZE: 500
+    MAILER_INBOUND_EMAIL_DOMAIN: ""
+    MAILER_SENDER_EMAIL: ""
+    MAILGUN_INGRESS_SIGNING_KEY: ""
+    MANDRILL_INGRESS_API_KEY: ""
+    RAILS_ENV: production
+    RAILS_INBOUND_EMAIL_PASSWORD: ""
+    RAILS_INBOUND_EMAIL_SERVICE: ""
+    RAILS_LOG_TO_STDOUT: true
+    RAILS_MAX_THREADS: 5
+    REDIS_SENTINEL_MASTER_NAME: ""
+    REDIS_SENTINELS: ""
+    REDIS_TLS: false
+    S3_BUCKET_NAME: ""
+    SECRET_KEY_BASE: replace_with_your_super_duper_secret_key_base
+    SENTRY_DSN: ""
+    SLACK_CLIENT_ID: ""
+    SLACK_CLIENT_SECRET: ""
+    SMTP_ADDRESS: ""
+    SMTP_AUTHENTICATION: plain
+    SMTP_ENABLE_STARTTLS_AUTO: true
+    SMTP_OPENSSL_VERIFY_MODE: none
+    SMTP_PASSWORD: ""
+    SMTP_PORT: 587
+    SMTP_USERNAME: ""
+    TWITTER_APP_ID: ""
+    TWITTER_CONSUMER_KEY: ""
+    TWITTER_CONSUMER_SECRET: ""
+    TWITTER_ENVIRONMENT: ""
+    USE_INBOX_AVATAR_FOR_BOT: true
