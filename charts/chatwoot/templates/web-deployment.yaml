@@ -37,13 +37,13 @@ spec:
           command:
             - docker/entrypoints/rails.sh
           envFrom:
-            {{- if .Values.env.enabled -}}
+          {{- if .Values.env.enabled }}
             - configMapRef:
                 name: {{ template "chatwoot.fullname" . }}-env
-            {{- else -}}
+          {{- else }}
             - secretRef:
-              - name: {{ .Values.env.secret.name }}
-            {{- end }}
+                name: {{ .Values.env.secret.name }}
+          {{- end }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           name: {{ .Chart.Name }}-web
           ports:

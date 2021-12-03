@@ -3,7 +3,7 @@ entries:
   chatwoot:
   - apiVersion: v2
     appVersion: v1.22.1
-    created: "2021-12-03T10:35:27.959451989+07:00"
+    created: "2021-12-03T14:26:33.648666086+07:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -15,7 +15,7 @@ entries:
       version: 14.7.2
     description: "Open-source customer engagement suite, an alternative to Intercom,
       Zendesk, Salesforce Service Cloud etc. \U0001F525\U0001F4AC"
-    digest: e4360af39c15f5d6c35ec777fdc670e0dc9ae8c8a3a7c4a085e4a76e64b96852
+    digest: 0b17b8ee9c178060fe7cd1968aba4a7454cb36d0c6d1a20b22c83f0dbeaf1735
     home: https://github.com/chatwoot/charts
     icon: https://chatwoot-public-assets.s3.amazonaws.com/logo/square.png
     keywords:
@@ -39,4 +39,4 @@ entries:
     urls:
     - chatwoot-0.6.10.tgz
     version: 0.6.10
-generated: "2021-12-03T10:35:27.94825072+07:00"
+generated: "2021-12-03T14:26:33.629645581+07:00"
