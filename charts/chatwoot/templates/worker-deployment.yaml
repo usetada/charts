@@ -32,8 +32,13 @@ spec:
             - -C
             - config/sidekiq.yml
           envFrom:
+          {{- if .Values.env.enabled }}
             - configMapRef:
                 name: {{ template "chatwoot.fullname" . }}-env
+          {{- else }}
+            - secretRef:
+                name: {{ .Values.env.secret.name }}
+          {{- end }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           name: {{ .Chart.Name }}-workers
           {{- with .Values.resources }}
