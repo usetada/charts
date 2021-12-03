@@ -3,8 +3,8 @@ This repository contains helm charts for [Chatwoot](https://github.com/chatwoot/
 
 ## Installation
 ```bash
-helm repo add chatwoot https://chatwoot.github.io/charts
-helm install chatwoot chatwoot/chatwoot
+helm repo add tada https://usetada.github.io/charts
+helm install chatwoot tada/chatwoot
 ```
 
 ## Configuration
