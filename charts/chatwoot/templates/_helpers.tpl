@@ -96,7 +96,7 @@ Set postgres host
 {{- if .Values.postgresql.enabled -}}
 {{- template "chatwoot.postgresql.fullname" . -}}
 {{- else -}}
-{{- .Values.postgresql.postgresqlHost -}}
+{{- .Values.postgresql.host -}}
 {{- end -}}
 {{- end -}}
 
@@ -129,7 +129,7 @@ Set postgres port
 {{- if .Values.postgresql.enabled -}}
     5432
 {{- else -}}
-{{- default 5432 .Values.postgresql.postgresqlPort -}}
+{{- default 5432 .Values.postgresql.port -}}
 {{- end -}}
 {{- end -}}
 

@@ -98,21 +98,19 @@ tolerations: []
 
 affinity: {}
 
-# this can be omitted if env.enabled=false
 postgresql:
   enabled: true
   nameOverride: chatwoot-postgresql
-  postgresqlDatabase: chatwoot_production
-  postgresqlUsername: postgres
-  postgresqlPassword: postgres
+  database: chatwoot_production
+  username: postgres
+  password: postgres
   # The following variables are only used when internal PG is disabled
-  # postgresqlHost: postgres
-  # postgresqlPort: 5432
-  # When defined the `postgresqlPassword` field is ignored
+  # host: postgres
+  # port: 5432
+  # When defined the `password` field is ignored
   # existingSecret: secret-name
   # existingSecretKey: postgresql-password
 
-# this can be omitted if env.enabled=false
 redis:
   enabled: true
   nameOverride: chatwoot-redis
@@ -154,13 +152,9 @@ env:
   # secret:
   #   name: "chatwoot-env"
   data:
-    # POSTGRES_HOST: ""
-    # POSTGRES_PORT: 5432
     # POSTGRES_USERNAME: ""
     # POSTGRES_PASSWORD: ""
     # POSTGRES_DATABASE: ""
-    # REDIS_HOST: ""
-    # REDIS_PORT: 6379
     # REDIS_PASSWORD: ""
     # REDIS_URL: ""
     ACTIVE_STORAGE_SERVICE: local

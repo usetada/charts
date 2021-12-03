@@ -43,7 +43,27 @@ spec:
         - exec
         - rails
         - db:chatwoot_prepare
+        {{- if not .Values.env.enabled }}
+        env:
+        {{- if not .Values.postgresql.enabled }}
+          - name: POSTGRES_HOST
+            value: {{ template "chatwoot.postgresql.host" . }}
+          - name: POSTGRES_PORT
+            value: "{{ template "chatwoot.postgresql.port" . }}"
+        {{- end }}
+        {{- if not .Values.redis.enabled }}
+          - name: REDIS_HOST
+            value: {{ template "chatwoot.redis.host" . }}
+          - name: REDIS_PORT
+            value: "{{ template "chatwoot.redis.port" . }}"
+        {{- end }}
+        {{- end }}
         envFrom:
+        {{- if .Values.env.enabled }}
           - configMapRef:
               name: {{ template "chatwoot.fullname" . }}-env
+        {{- else }}
+          - secretRef:
+              name: {{ .Values.env.secret.name }}
+        {{- end }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}

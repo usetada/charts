@@ -95,11 +95,11 @@ The command removes all the Kubernetes components associated with the chart and 
 | Name                                | Type                                                                          | Default Value                                    |
 | ----------------------------------- | ----------------------------------------------------------------------------- | ------------------------------------------------ |
 | `postgresql.enabled`                | Set to `false` if using external postgres and modify the below variables.     | `true`                                           |
-| `postgresql.postgresqlDatabase`     | Chatwoot database name                                                        | `chatwoot_production`                            |
-| `postgresql.postgresqlHost`         | Postgres host. Edit if using external postgres.                               | `""`                                             |
-| `postgresql.postgresqlPassword`     | Postgres password. Edit if using external postgres.                           | `postgres`                                       |
-| `postgresql.postgresqlPort`         | Postgres port                                                                 | `5432`                                           |
-| `postgresql.postgresqlUsername`     | Postgres username.                                                            | `postgres`                                       |
+| `postgresql.database`               | Chatwoot database name                                                        | `chatwoot_production`                            |
+| `postgresql.host`                   | Postgres host. Edit if using external postgres.                               | `""`                                             |
+| `postgresql.password`               | Postgres password. Edit if using external postgres.                           | `postgres`                                       |
+| `postgresql.port`                   | Postgres port                                                                 | `5432`                                           |
+| `postgresql.username`               | Postgres username.                                                            | `postgres`                                       |
 
 ### Redis variables
 
