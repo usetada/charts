@@ -3,7 +3,7 @@ entries:
   chatwoot:
   - apiVersion: v2
     appVersion: v1.22.1
-    created: "2021-12-03T14:31:26.184074895+07:00"
+    created: "2021-12-03T16:26:18.504659992+07:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -15,7 +15,7 @@ entries:
       version: 14.7.2
     description: "Open-source customer engagement suite, an alternative to Intercom,
       Zendesk, Salesforce Service Cloud etc. \U0001F525\U0001F4AC"
-    digest: 430cef51dea89648d3aaa4da7f976b2deace6841a71209f04dbfe3b1bedcafc9
+    digest: ff347a79b47b4a6598318d24f109aa7b8179201383a278aefae7998d351dc56e
     home: https://github.com/chatwoot/charts
     icon: https://chatwoot-public-assets.s3.amazonaws.com/logo/square.png
     keywords:
@@ -37,44 +37,6 @@ entries:
     - http://www.chatwoot.com
     type: application
     urls:
-    - chatwoot-0.6.11.tgz
-    version: 0.6.11
-  - apiVersion: v2
-    appVersion: v1.22.1
-    created: "2021-12-03T14:31:26.172218001+07:00"
-    dependencies:
-    - condition: postgresql.enabled
-      name: postgresql
-      repository: https://charts.bitnami.com/bitnami
-      version: 10.5.3
-    - condition: redis.enabled
-      name: redis
-      repository: https://charts.bitnami.com/bitnami
-      version: 14.7.2
-    description: "Open-source customer engagement suite, an alternative to Intercom,
-      Zendesk, Salesforce Service Cloud etc. \U0001F525\U0001F4AC"
-    digest: 0b17b8ee9c178060fe7cd1968aba4a7454cb36d0c6d1a20b22c83f0dbeaf1735
-    home: https://github.com/chatwoot/charts
-    icon: https://chatwoot-public-assets.s3.amazonaws.com/logo/square.png
-    keywords:
-    - chatwoot
-    - open source
-    - customer support
-    - chat
-    - ruby
-    - rails
-    - crm
-    maintainers:
-    - email: vishnu@chatwoot.com
-      name: vishnu-narayanan
-    - email: sojan@chatwoot.com
-      name: sojan-official
-    name: chatwoot
-    sources:
-    - https://github.com/chatwoot/chatwoot
-    - http://www.chatwoot.com
-    type: application
-    urls:
-    - chatwoot-0.6.10.tgz
-    version: 0.6.10
-generated: "2021-12-03T14:31:26.160875142+07:00"
+    - chatwoot-0.6.12.tgz
+    version: 0.6.12
+generated: "2021-12-03T16:26:18.493685289+07:00"
